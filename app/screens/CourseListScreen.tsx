@@ -34,16 +34,17 @@ export default function CourseListScreen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, backgroundColor: "#f0f0f0" },
   list: { padding: 16 },
   item: {
     padding: 16,
     borderRadius: 8,
-    backgroundColor: "#f0f0f0",
+  backgroundColor: "#90EE90",
     marginBottom: 12,
   },
   title: {
     fontSize: 18,
     fontWeight: "bold",
+    color: "#006400",
   },
 });

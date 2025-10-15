@@ -37,7 +37,6 @@ export default function RootLayout() {
           name="CourseList"
           component={CourseListScreen}
           options={{
-            title: "All Courses",
             headerLeft: () => (
               <TouchableOpacity onPress={() => navigation.openDrawer()} style={{ marginLeft: 16 }}>
                 <Text style={{ fontSize: 24 }}>☰</Text>
@@ -77,8 +76,8 @@ export default function RootLayout() {
       >
         <Tab.Screen
           name="AllCourses"
-          component={CoursesStackNavigator}
-          options={{ tabBarLabel: "All Courses" }}
+          children={props => <CoursesStackNavigator {...props} />}
+          options={{ tabBarLabel: "Browse" }}
         />
         <Tab.Screen
           name="Wishlist"
@@ -91,7 +90,7 @@ export default function RootLayout() {
 
   return (
     <Drawer.Navigator initialRouteName="Courses">
-      <Drawer.Screen name="Courses" component={CoursesTabNavigator} options={{ drawerLabel: "Courses" }} />
+      <Drawer.Screen name="Courses" component={CoursesTabNavigator} options={{ drawerLabel: "All Courses" }} />
       <Drawer.Screen name="Profile" component={ProfileScreen} options={{ drawerLabel: "My Profile" }} />
     </Drawer.Navigator>
   );
