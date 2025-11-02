@@ -8,6 +8,8 @@ import CourseListScreen from "./screens/CourseListScreen";
 import CourseDetailScreen from "./screens/CourseDetailScreen";
 import WishlistScreen from "./screens/WishlistScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import StoreScreen from "./screens/StoreScreen";
+import SettingsScreen from "./screens/SettingsScreen";
 
 
 export type CoursesStackParamList = {
@@ -23,6 +25,8 @@ export type CoursesTabParamList = {
 export type RootDrawerParamList = {
   Courses: undefined;
   Profile: undefined;
+  Store: undefined;
+  Settings: undefined;
 };
 
 export default function RootLayout() {
@@ -92,6 +96,8 @@ export default function RootLayout() {
     <Drawer.Navigator initialRouteName="Courses">
       <Drawer.Screen name="Courses" component={CoursesTabNavigator} options={{ drawerLabel: "All Courses" }} />
       <Drawer.Screen name="Profile" component={ProfileScreen} options={{ drawerLabel: "My Profile" }} />
+      <Drawer.Screen name="Store" component={StoreScreen} options={{ drawerLabel: "Store" }} />
+      <Drawer.Screen name="Settings" component={SettingsScreen} options={{ drawerLabel: "Settings" }} />
     </Drawer.Navigator>
   );
 }
